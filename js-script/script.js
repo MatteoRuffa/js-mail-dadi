@@ -29,9 +29,15 @@ elButton.addEventListener('click', function(){
     }
     console.log(inList);
     
+    let showResult = document.createElement('div');
+    showResult.classList.add('fw-medium', 'fs-5');
+    document.querySelector('.container').appendChild(showResult);
+
     if (inList) {
+        showResult.innerText = 'Ok sei sulla lista, puoi entrare!';
         console.log(`Ok sei sulla lista, puoi entrare!`);
     } else {
+        showResult.innerText = 'Mi dispiace non sei sulla lista!';
         console.log(`Mi dispiace non sei sulla lista!`);
     }
 });
