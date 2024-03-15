@@ -62,10 +62,8 @@ let result;
 
 elButtonDice.addEventListener('click', function(){
     
-    if (boxUser) {
+    if (boxUser && boxAi) {
         boxUser.remove();
-    }
-    if (boxAi) {
         boxAi.remove();
     }
     if (result) {
