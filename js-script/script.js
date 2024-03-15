@@ -14,18 +14,17 @@ const emailList = [
 ]
 console.log(emailList);
 
-let inList = false;
+
 const elButton = document.querySelector('.btn.btn-primary');
 
 elButton.addEventListener('click', function(){
+    let inList = false;
     const userMail = document.getElementById('user-email').value;
     console.log(userMail);
     for (let i = 0; i < emailList.length; i++) {
         if (userMail === emailList[i]) {
             inList = true;
-        } else {
-            inList = false;
-        }
+        } 
     }
     console.log(inList);
     
