@@ -50,21 +50,26 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
 
 const elButtonDice = document.querySelector('.btn.btn-warning');
-let img;
+let imgUser;
+let imgAi;
 
 elButtonDice.addEventListener('click', function(){
-    if (img) {
-        img.remove();
+    if (imgUser && imgAi) {
+        imgUser.remove();
+        imgAi.remove();
     }
-
+    
     let userDice = getRndInteger(1, 6);
     // console.log(`hai tirato un: ${userDice}`);
-    img = document.createElement('img');
-    img.src = './img/' + userDice + '.svg';
-    document.querySelector('.small-container').appendChild(img);
+    imgUser = document.createElement('img');
+    imgUser.src = './img/' + userDice + '.svg';
+    document.querySelector('.small-container').appendChild(imgUser);
     
     let aiDice = getRndInteger(1, 6);
     // console.log(`la ai ha tirato un: ${aiDice}`);
+    imgAi = document.createElement('img');
+    imgAi.src = './img/' + aiDice + '.svg';
+    document.querySelector('.small-container').appendChild(imgAi);
     
     if (userDice > aiDice){
         console.log('Hai vinto!');
