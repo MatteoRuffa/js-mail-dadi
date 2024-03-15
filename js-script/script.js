@@ -14,10 +14,14 @@ const emailList = [
 ]
 console.log(emailList);
 
-
+let showResult;
 const elButton = document.querySelector('.btn.btn-primary');
 
 elButton.addEventListener('click', function(){
+    if (showResult) {
+        showResult.remove();
+    }
+    
     let inList = false;
     const userMail = document.getElementById('user-email').value;
     console.log(userMail);
@@ -28,7 +32,7 @@ elButton.addEventListener('click', function(){
     }
     console.log(inList);
     
-    let showResult = document.createElement('div');
+    showResult = document.createElement('div');
     showResult.classList.add('fw-medium', 'fs-5');
     document.querySelector('.container').appendChild(showResult);
 
