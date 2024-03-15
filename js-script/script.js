@@ -5,7 +5,7 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 */
 
-
+/*
 const emailList = [
     'Clelia-Boolean@gmail.com',
     'Emanuele-Boolean@protonmail.com',
@@ -40,8 +40,7 @@ elButton.addEventListener('click', function(){
         console.log(`Mi dispiace non sei sulla lista!`);
     }
 });
-
-
+*/
 
 
 /*
@@ -49,3 +48,17 @@ Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
+
+let userDice = getRndInteger(1, 6);
+console.log(`hai tirato un: ${userDice}`);
+
+let aiDice = getRndInteger(1, 6);
+console.log(`la ai ha tirato un: ${aiDice}`);
+
+if (userDice > aiDice){
+    console.log('Hai vinto!');
+} else if (userDice < aiDice) {
+    console.log('Hai perso!');
+} else {
+    console.log('Hai pareggiato');
+}
