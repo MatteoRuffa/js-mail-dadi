@@ -50,46 +50,78 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
 
 const elButtonDice = document.querySelector('.btn.btn-warning');
+
+let boxUser;
 let imgUser;
+let textNodeUser;
+let boxAi;
 let imgAi;
+let textNodeAi;
+
 let result;
 
 elButtonDice.addEventListener('click', function(){
+    if (boxUser && boxAi) {
+        boxUser.remove();
+    }
     if (imgUser && imgAi) {
         imgUser.remove();
         imgAi.remove();
     }
+    if (textNodeUser && textNodeAi)  {
+        textNodeUser.remove();
+        textNodeAi.remove();
+    }
     if (result) {
         result.remove();
     }
+   
     
     let userDice = getRndInteger(1, 6);
     // console.log(`hai tirato un: ${userDice}`);
+
+    boxUser = document.createElement('div');
+    boxUser.classList.add('fw-medium', 'fs-5')
     imgUser = document.createElement('img');
     imgUser.src = './img/' + userDice + '.svg';
-    document.querySelector('.small-container').appendChild(imgUser);
+
+    textNodeUser = document.createTextNode("Il tuo tiro");
+    
+    document.querySelector('.small-container').appendChild(boxUser);
+    boxUser.appendChild(imgUser);
+    boxUser.appendChild(textNodeUser);
     
     let aiDice = getRndInteger(1, 6);
     // console.log(`la ai ha tirato un: ${aiDice}`);
+
+    boxAi = document.createElement('div');
+    boxAi.classList.add('fw-medium', 'fs-5')
     imgAi = document.createElement('img');
     imgAi.src = './img/' + aiDice + '.svg';
-    document.querySelector('.small-container').appendChild(imgAi);
+
+    textNodeAi = document.createTextNode("Il tuo tiro");
+
+    document.querySelector('.small-container').appendChild(boxAi);
+    boxAi.appendChild(imgAi);
+    boxAi.appendChild(textNodeAi);
+
+    
     
     if (userDice > aiDice){
         result = document.createElement('div');
         result.innerText = 'Hai vinto'
         document.querySelector('.result-box').appendChild(result);
-        console.log('Hai vinto!');
+        // console.log('Hai vinto!');
     } else if (userDice < aiDice) {
         result = document.createElement('div');
         result.innerText = 'Hai perso!'
         document.querySelector('.result-box').appendChild(result);
-        console.log('Hai perso!');
+        // console.log('Hai perso!');
     } else {
         result = document.createElement('div');
         result.innerText = 'Hai pareggiato'
         document.querySelector('.result-box').appendChild(result);
-        console.log('Hai pareggiato');
+        // console.log('Hai pareggiato');
     }
 });
 
