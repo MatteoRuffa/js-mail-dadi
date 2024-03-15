@@ -93,7 +93,7 @@ elButtonDice.addEventListener('click', function(){
     imgAi = document.createElement('img');
     imgAi.src = './img/' + aiDice + '.svg';
 
-    textNodeAi = document.createTextNode("Il tuo tiro");
+    textNodeAi = document.createTextNode("Il tiro dell'Ai");
 
     document.querySelector('.small-container').appendChild(boxAi);
     boxAi.appendChild(imgAi);
