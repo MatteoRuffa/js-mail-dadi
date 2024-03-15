@@ -5,8 +5,6 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 */
 
-const userMail = prompt('inserisci la tua email');
-console.log(userMail);
 
 const emailList = [
     'Clelia-Boolean@gmail.com',
@@ -17,18 +15,32 @@ const emailList = [
 console.log(emailList);
 
 let inList = false;
-for (let i = 0; i < emailList.length; i++) {
-    if (userMail === emailList[i]) {
-        inList = true;
-    } else {
-        inList = false;
+const elButton = document.querySelector('.btn.btn-primary');
+
+elButton.addEventListener('click', function(){
+    const userMail = document.getElementById('user-email').value;
+    console.log(userMail);
+    for (let i = 0; i < emailList.length; i++) {
+        if (userMail === emailList[i]) {
+            inList = true;
+        } else {
+            inList = false;
+        }
     }
-}
-console.log(inList);
+    console.log(inList);
+    
+    if (inList) {
+        console.log(`Ok sei sulla lista, puoi entrare!`);
+    } else {
+        console.log(`Mi dispiace non sei sulla lista!`);
+    }
+});
 
-if (inList) {
-    console.log(`Ok sei sulla lista, puoi entrare!`);
-} else {
-    console.log(`Mi dispiace non sei sulla lista!`);
-}
 
+
+
+/*
+Gioco dei dadi
+Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+Stabilire il vincitore, in base a chi fa il punteggio più alto.
+*/
