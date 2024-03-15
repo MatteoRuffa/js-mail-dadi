@@ -16,12 +16,19 @@ const emailList = [
 ]
 console.log(emailList);
 
+let inList = false;
 for (let i = 0; i < emailList.length; i++) {
-    if (userMail !== emailList[i]) {
-        console.log(`Mi dispiace non sei sulla lista!`);
+    if (userMail === emailList[i]) {
+        inList = true;
     } else {
-        console.log(`Ok sei sulla lista, puoi entrare!`);
+        inList = false;
     }
 }
+console.log(inList);
 
+if (inList) {
+    console.log(`Ok sei sulla lista, puoi entrare!`);
+} else {
+    console.log(`Mi dispiace non sei sulla lista!`);
+}
 
