@@ -52,11 +52,15 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 const elButtonDice = document.querySelector('.btn.btn-warning');
 let imgUser;
 let imgAi;
+let result;
 
 elButtonDice.addEventListener('click', function(){
     if (imgUser && imgAi) {
         imgUser.remove();
         imgAi.remove();
+    }
+    if (result) {
+        result.remove();
     }
     
     let userDice = getRndInteger(1, 6);
@@ -72,10 +76,19 @@ elButtonDice.addEventListener('click', function(){
     document.querySelector('.small-container').appendChild(imgAi);
     
     if (userDice > aiDice){
+        result = document.createElement('div');
+        result.innerText = 'Hai vinto'
+        document.querySelector('.result-box').appendChild(result);
         console.log('Hai vinto!');
     } else if (userDice < aiDice) {
+        result = document.createElement('div');
+        result.innerText = 'Hai perso!'
+        document.querySelector('.result-box').appendChild(result);
         console.log('Hai perso!');
     } else {
+        result = document.createElement('div');
+        result.innerText = 'Hai pareggiato'
+        document.querySelector('.result-box').appendChild(result);
         console.log('Hai pareggiato');
     }
 });
