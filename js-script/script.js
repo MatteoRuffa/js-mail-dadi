@@ -50,13 +50,21 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
 
 const elButtonDice = document.querySelector('.btn.btn-warning');
+let img;
 
 elButtonDice.addEventListener('click', function(){
+    if (img) {
+        img.remove();
+    }
+
     let userDice = getRndInteger(1, 6);
-    console.log(`hai tirato un: ${userDice}`);
+    // console.log(`hai tirato un: ${userDice}`);
+    img = document.createElement('img');
+    img.src = './img/' + userDice + '.svg';
+    document.querySelector('.small-container').appendChild(img);
     
     let aiDice = getRndInteger(1, 6);
-    console.log(`la ai ha tirato un: ${aiDice}`);
+    // console.log(`la ai ha tirato un: ${aiDice}`);
     
     if (userDice > aiDice){
         console.log('Hai vinto!');
@@ -68,16 +76,3 @@ elButtonDice.addEventListener('click', function(){
 });
 
 
-let userDice = getRndInteger(1, 6);
-console.log(`hai tirato un: ${userDice}`);
-
-let aiDice = getRndInteger(1, 6);
-console.log(`la ai ha tirato un: ${aiDice}`);
-
-if (userDice > aiDice){
-    console.log('Hai vinto!');
-} else if (userDice < aiDice) {
-    console.log('Hai perso!');
-} else {
-    console.log('Hai pareggiato');
-}
