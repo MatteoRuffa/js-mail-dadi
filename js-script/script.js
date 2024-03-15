@@ -5,7 +5,7 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 */
 
-/*
+
 const emailList = [
     'Clelia-Boolean@gmail.com',
     'Emanuele-Boolean@protonmail.com',
@@ -40,7 +40,7 @@ elButton.addEventListener('click', function(){
         console.log(`Mi dispiace non sei sulla lista!`);
     }
 });
-*/
+
 
 
 /*
@@ -61,16 +61,12 @@ let textNodeAi;
 let result;
 
 elButtonDice.addEventListener('click', function(){
-    if (boxUser && boxAi) {
+    
+    if (boxUser) {
         boxUser.remove();
     }
-    if (imgUser && imgAi) {
-        imgUser.remove();
-        imgAi.remove();
-    }
-    if (textNodeUser && textNodeAi)  {
-        textNodeUser.remove();
-        textNodeAi.remove();
+    if (boxAi) {
+        boxAi.remove();
     }
     if (result) {
         result.remove();
